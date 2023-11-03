@@ -2,7 +2,8 @@
 
 
     ToDo:
-        Attempt that controll DB in test environment
+        - notion_clientというライブラリをインストール
+        - NotionAPIのアクセストークンをNOTION_TOKENという変数名で環境変数に設定
 
 """
 import os
@@ -12,7 +13,8 @@ from notion_client import Client
 token = os.environ.get("NOTION_TOKEN")
 client = Client(auth=token)
 
-database_id = "c58eb74b3e8744c4ad35021dac4cf845"
+#データベースIDを設定
+database_id = "hogehoge"
 
 property_name_1 = "\u30b9\u30c6\u30fc\u30bf\u30b9" #ステータス
 

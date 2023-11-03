@@ -1,16 +1,10 @@
-//Notion ToDo list Automation
-
 function main() {
   const NOTION_API_KEY = PropertiesService.getScriptProperties().getProperty('NOTION_API_KEY');
-  const database_id = 'c58eb74b3e8744c4ad35021dac4cf845';
-  //const database_id = '0fe6066d5323405ea7f5e3ea86a192b4';
-  
+  const database_id = 'c58eb74b3e8744c4ad35021dac4cf845';  
 
   let page_ids = queryPage(NOTION_API_KEY, database_id);
 
   console.log(page_ids);
-
-  updatePage(NOTION_API_KEY, page_ids[0]);
 
   if (page_ids.length >0){
     for (let i=0; i<page_ids.length; i++){
@@ -18,7 +12,7 @@ function main() {
       console.log("convert " + page_ids[i])
     }
   }else{
-    console.log("完了タスクはありませんでした．")
+    console.log("There were no completed tasks.")
   }
 }
 
@@ -79,5 +73,3 @@ function updatePage(NOTION_API_KEY, page_id){
 
   UrlFetchApp.fetch(url, opts);
 }
-
-
